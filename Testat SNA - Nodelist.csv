@@ -1,0 +1,41 @@
+id,name,country,type
+1,Florian Müller,Deutschland,1
+Mainz,Mainz 05,Deutschland,2
+42,Florian Schock,Deutschland,1
+Stgt_II,Stuttgart II,Deutschland,2
+37,Hiroki Ito,Japan,1
+Iwata,Jubilo Iwata,Japan,2
+32,Naouirou Ahamada,Frankreich,1
+Turin,Juventus U23,Italien,2
+8,Enzo Millot,Frankreich,1
+Monaco,AS Monaco,Frankreich,2
+28,Nikolas Nartey,Daenemark,1
+Sandhausen,SV Sandhausen,Deutschland,2
+34,Oemer Beyaz,Tuerkei,1
+Istanbul,Fenerbahce,Tuerkei,2
+22,Chris Fuehrich,Deutschland,1
+Paderborn,SC Paderborn,Deutschland,2
+18,Tiago Tomas,Portugal,1
+Lissabon,Sporting,Portugal,2
+17,Omar Marmoush,Aegypten,1
+Wolfsburg,VFL Wolfsburg,Deutschland,2
+19,Wahid Faghir,Daenemark,1
+Vejle,Vejle BK,Daenemark,2
+50,Alexis Tibidi,Frankreich,1
+Stgt_U19,Stuttgart U19,Deutschland,2
+44,Mohamed Sankoh,Niederlande,1
+Deutschland,,,
+Japan,,,
+Frankreich,,,
+Komoren,,,
+Martinique,,,
+Ghana,,,
+Daenemark,,,
+Tuerkei,,,
+Portugal,,,
+Aegypten,,,
+Kanada,,,
+Afghanistan,,,
+Kamerun,,,
+Niederlande,,,
+Sierra_Leone,,,
