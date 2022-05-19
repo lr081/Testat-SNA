@@ -1,0 +1,92 @@
+---
+title: "Testat SNA"
+author: "Lisa-Marie Riffelt| lr081@hdm-stuttgart.de"
+date: "Sommersemester 22"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: 3
+    number_sections: yes
+subtitle: "Analyse der Transfers zum VfB des aktuellen Kaders"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(igraph)
+```
+
+# Daten und Codebuch
+
+Die Daten und das Codebuch sind in meinem Github-Account [lr081](https://github.com/lr081/Testat-SNA) hinterlegt.
+
+**Edge-Attribute**\
+
+from:  vorheriger Verein oder Rückennummer
+
+to:  Rückennummer oder Nationalität
+
+weight:  Transfersumme in Hundertausend Euro gerundet
+
+season:  Transferfenster = Transferjahr zum VFB
+
+**Node-Attribute**\
+
+id:  Rückennummer Spieler oder Abkürzung Verein oder Abkürzung Nationalität
+
+name:  Name Spieler oder Verein oder Land
+
+country:  Nationalität Spieler oder Land des Transfervereins
+
+type:  1 = Spieler, 2 = Verein
+
+## Netzwerk einlesen
+
+```{r Gesamnetzwerk erstellen, echo=FALSE}
+
+library(igraph)
+
+# Einlesen der Edge- und Nodelist
+el <- read.csv("https://raw.githubusercontent.com/lr081/Testat-SNA/main/edges.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lr081/Testat-SNA/main/nodes.csv", header=T, as.is=T, sep = ",")
+
+# Matrix erstellen
+edgematrix <-as.matrix(el)
+
+# Zusammenführen von Edge- und Nodelist als igraph-Objekt s
+vfb <- graph_from_data_frame(d=edgematrix, directed=F)
+vfb
+```
+
+### Netzwerk visualisieren
+
+```{r Visualisierung des Objekts, fig.height=7, fig.width=9}
+plot(vfb,
+     asp=0,
+     layout=layout_nicely,
+     rescale=TRUE,
+     vertex.size=degree(vfb)*2,
+     vertex.frame.color="black",
+     vertex.color="violetred2",
+     edge.color="black",
+     edge.size=.2,
+     main="Transfer zum VfB",
+     sub="Visualisierung nach Nationalität")
+
+```
+
+### Nezwerk interpretieren und Fragen beantworten
+
+1)  Wie interpretieren Sie das erstellte Netzwerk? Wieviel Zeit haben Sie dafür benötigt (ohne Fehlerkorrektur sollte das in maximal 120 min machbar sein)?
+
+Aus der Visualisierung ergibt sich, dass die meisten Transferspieler aus einem deutschen Verein zum VfB gewechselt sind, sie jedoch viele unterschiedliche Nationalitäten haben.
+
+Ich habe für alles zusammen (habe nicht alles am Stück gemacht) 110 Minuten gebraucht.
+
+2)  Was war Ihr grösster Lernerfolg der Veranstaltung?
+
+Mein größter Lernerfolg war die Übungsklausur, bei der ich die meisten Lernfortschritte gemacht habe.
+
+3)  Welches Netzwerk möchten Sie gerne selbst untersuchen?
+
+Mich würde interessieren, welche Parteispenden im vergangenen Jahr an die einzelnen Parteien im Bundestag geflossen sind (wie hoch waren die Spenden und von wem kamen sie).
