@@ -1,0 +1,13 @@
+# Codebuch	
+
+## Edgelist
+from:	vorheriger Verein oder Rückennummer
+to:	Rückennummer oder Nationalität
+weight:	Transfersumme in Hundertausend Euro gerundet	
+season:	Transferfenster = Transferjahr zum VFB			
+				
+## Nodelist
+id:	Rückennummer Spieler oder Abkürzung Verein oder Abkürzung Nationalität
+name:	Name Spieler oder Verein oder Land
+country: Nationalität Spieler oder Land des Transfervereins
+type:	1 = Spieler, 2 = Verein
